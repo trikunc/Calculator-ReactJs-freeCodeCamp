@@ -1,4 +1,147 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
+
+body {
+  background-color: #ecf0f1;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background-color: #06121b;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  /* height: 675px; */
+  width: 370px;
+  padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculatorCell {
+  width: 25%;
+  height: 90px;
+}
+
+.calculatorCellDouble {
+  width: 50%;
+  height: 90px;
+}
+
+.primaryButton {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c3540;
+}
+
+.primaryButtonText {
+  font-size: 20;
+  color: #fff;
+  font-weight: bold;
+}
+
+.secondaryButton {
+  width: 98%;
+  height: 100%;
+  /* align-content: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3f4f5b;
+}
+
+.secondaryButtonText {
+  font-size: 20;
+  color: #fff;
+}
+
+.topRow {
+  width: 365px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.botRow {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3px;
+}
+
+/* ================================== */
+.display {
+  /* margin-top: 15px; */
+  text-align: right;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* display: flex; */
+  /* flex-direction: column */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+/* .displayContainer {
+  width: 95%;
+  height: 100%;
+  background-color: yellow;
+} */
+
+.symbol {
+  width: 365px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  /* height: 30px; */
+  background-color: #06121b;
+}
+
+button .symbolButton {
+  color: #fff;
+  font-size: 14;
+}
+
+.Back {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.bodyCal {
+  height: 71%;
+}
+
+/* button.big-v {
+  border-radius: 50px;
+  height: 110px;
+}
+
+button.big-h {
+  border-radius: 50px;
+  width: 110px;
+}
+
+button.orange {
+  background-color: #ee9406;
+  color: #fff;
+}
+
+button.dark-grey {
+  background-color: #323232;
+  color: #fff;
+}
+
+button.light-grey {
+  background-color: #a5a5a5;
+} */
