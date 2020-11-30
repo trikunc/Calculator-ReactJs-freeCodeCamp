@@ -15,7 +15,7 @@ const App = () => {
   const [mode, setMode] = useState(false);
   const [num, setNum] = useState(true);
   const [modeDisplay, setModeDisplay] = useState(false);
-  const [clear, setClear] = useState(true);
+  const [percent, setPercent] = useState(false);
   const [dot, setDot] = useState(false);
   const [historyModal, setHistoryModal] = useState(false);
 
@@ -102,14 +102,24 @@ const App = () => {
   };
 
   const changeMod = () => {
-    const negMod = "-";
     let result = "";
-    if (primaryDisplay.includes(negMod)) {
+    const isNegMod = primaryDisplay[0];
+    if (isNegMod === "-") {
       result = primaryDisplay.replace("-", "");
     } else {
       result = primaryDisplay === "0" ? primaryDisplay : `-${primaryDisplay}`;
     }
     setPrimaryDisplay(result);
+  };
+
+  const percentMod = () => {
+    if (percent) {
+      setPrimaryDisplay(parseFloat(primaryDisplay) * 100);
+      setPercent(false);
+    } else if (!percent) {
+      setPrimaryDisplay(parseFloat(primaryDisplay) / 100);
+      setPercent(true);
+    }
   };
 
   const backClick = () => {
@@ -118,7 +128,7 @@ const App = () => {
       newPrimaryDisplay.pop();
       newPrimaryDisplay = newPrimaryDisplay.join("");
       setPrimaryDisplay(newPrimaryDisplay);
-    } else if (primaryDisplay.length === 1) {
+    } else if (primaryDisplay.toString().length === 1) {
       setPrimaryDisplay("0");
     }
   };
@@ -247,7 +257,7 @@ const App = () => {
         <div className="topRow">
           {PrimaryButton("C", "clear", clearScreen)}
           {PrimaryButton("+/-", "chengeMod", changeMod)}
-          {PrimaryButton("%", "percentage")}
+          {PrimaryButton("%", "percentage", percentMod)}
           {PrimaryButton("÷", "divide")}
         </div>
         <div className="botRow">
